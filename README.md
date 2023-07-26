@@ -87,8 +87,8 @@ export default defineNuxtConfig({
 ```
 
 ## Acknowledgement
-The development of nuxt-radash was made possible thanks to the inspiration and code base from [Nuxt-Radash](https://github.com/cipami/nuxt-Radash).
+The development of nuxt-radash was made possible thanks to the inspiration and code base from [nuxt-lodash](https://github.com/cipami/nuxt-lodash).
 
 ## 📄 License
 
-[MIT License](https://github.com/bbg/nuxt-radash/blob/master/LICENSE) © 2021-2023 - [Batuhan Göksu](https://github.com/bbg)
+[MIT License](https://github.com/bbg/nuxt-radash/blob/master/LICENSE) © 2023 - [Batuhan Göksu](https://github.com/bbg)
