@@ -1,0 +1,52 @@
+{
+  "name": "nuxt-radash",
+  "version": "1.0.0",
+  "description": "radash for Nuxt",
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "radash"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbg/nuxt-radash"
+  },
+  "author": {
+    "name": "Batuhan Göksu",
+    "email": "batuhangoksu@gmail.com"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build --stub && nuxi prepare playground && nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.6.5",
+    "radash": "^11.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/module-builder": "^0.4.0",
+    "@nuxt/schema": "^3.6.5",
+    "@nuxt/test-utils": "^3.6.5",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "@types/node": "^18.17.0",
+    "eslint": "latest",
+    "nuxt": "^3.6.0"
+  }
+}
