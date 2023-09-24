@@ -1,5 +1,5 @@
-import { addImports, defineNuxtModule } from "@nuxt/kit";
-import * as radash from "radash";
+import { addImports, createResolver, defineNuxtModule } from "@nuxt/kit";
+import * as radash from "./runtime/radash";
 
 export interface ModuleOptions {
   /**
@@ -48,7 +48,9 @@ export default defineNuxtModule<ModuleOptions>({
     alias: [],
     upperAfterPrefix: true,
   },
-  setup(options, nuxt) {
+  setup(options) {
+    const { resolve } = createResolver(import.meta.url);
+
     const aliasMap = new Map<string, string>(options.alias);
     const prefixSkip = options.prefixSkip
       ? radash.isArray(options.prefixSkip)
@@ -63,7 +65,7 @@ export default defineNuxtModule<ModuleOptions>({
       const as = prefix
         ? prefix + (options.upperAfterPrefix ? radash.pascal(alias) : alias)
         : alias;
-      addImports({ name, as, from: "radash" });
+      addImports({ name, as, from: resolve("./runtime/radash") });
     }
   },
 });
